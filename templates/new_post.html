@@ -1,0 +1,22 @@
+{% extends 'base.htm' %}
+
+{% block title %}Upload Image{% endblock title %}Upload Image
+
+{% block content %}
+
+<div class='card my-5 bg-dark text-white rounded border-danger'>
+    <form method="POST" action="" enctype="multipart/form-data" class="col-sm-4 offset-4">
+        <h3 class="my-5">Create a Post</h3>
+        <br>
+        {% csrf_token %}
+        {{ form.as_p }}
+        
+        <div>
+            <button type='submit' class='btn btn-danger my-4'>Submit</button>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
+
+

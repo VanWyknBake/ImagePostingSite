@@ -1,0 +1,24 @@
+<nav class="navbar border rounded mx-5 border-danger navbar-expand navbar-dark bg-danger bg-gradient sticky-xl-top mt-3 " aria-label="Second navbar example">
+        <div class="container-fluid  ">
+            <a class="navbar-brand text-dark" href="/">REAPERSROOMS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02"
+                aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarsExample02 text-danger">
+                <ul class="navbar-nav me-auto ">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'feed:post' %}">New Post</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'feed:about' %}">About</a>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </nav>

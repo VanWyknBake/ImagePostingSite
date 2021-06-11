@@ -1,0 +1,21 @@
+{% extends 'base.htm' %}
+
+{% block title %}Detail view{% endblock title %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-sm-7 offset-sm-2 pt-5 text-white text-center">
+            <h3>{{ object.title }}</h3>
+            <p>{{ object.text }}</p>
+            <img src="{{object.image.url}}" class="img-fluid rounded border border-danger">  
+            <hr>  
+        </div>
+    </div>
+    
+{% endblock content %}
+
+
+
+
+
+

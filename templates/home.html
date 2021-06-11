@@ -1,0 +1,38 @@
+{% extends 'base.htm' %}
+{% load thumbnail %}
+
+
+{% block title %}REAPERSROOMS{% endblock title %}
+
+{% block content %}
+<h2 class='text-center text-white my-4 py-4'>Posts Feed</h2>
+<hr>
+    <div class="row">   
+    {% for post in posts %}                   
+        <!--!!!!github/jazzband/sorl-thumbnail-->    
+    <div class="col-sm-6 col-md-3">     
+    <div class="card my-4 border-bottom border-danger">
+        {% thumbnail post.image "200x200" crop="center" as im %}
+            <img src="{{ im.url }}" class="card-img-top" alt="...">
+        {% endthumbnail %}
+    
+    <div class="card-body bg-dark bg-gradient text-white">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <p class="card-text">{{ post.text }}</p>
+        <p class='card-date'>{{ post.date }}</p>
+        <a href="{% url 'feed:detail' post.id %}" class="btn btn-danger bg-gradient text-dark">View Post</a>
+    </div>
+    </div>
+    </div>
+    
+    
+    {% empty %}
+        <h3 class='col-sm-6 offset-3 text-center my-4 text-danger'>WELCOME TO REAPERSROOMS</h3>
+        <p class='col-sm-6 offset-3 text-center my-4 text-white'>Be the first to create a post</p>
+        <button class='btn btn-danger col-sm-6 offset-3 my-4 bg-gradient text-white'>
+        <a href="{% url 'feed:post' %}">FIRST POST</a>
+        </button>
+
+    {% endfor %}
+    </div>
+{% endblock content %}
